@@ -9,9 +9,9 @@ int main(void) {
   uintptr_t raw = Serializer::serialize(&data);
   Data *ptr = Serializer::deserialize(raw);
 
-  std::cout << "Serialized value: " << raw << "\n";
+  std::cout << "Serialized raw value: " << raw << "\n";
 
-  std::cout << "Deserialized Data: value = " << ptr->value
+  std::cout << "Deserialized data: value = " << ptr->value
             << ", name = " << ptr->str << "\n";
 
   if (ptr == &data) {

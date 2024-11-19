@@ -12,7 +12,6 @@ CPPFLAGS    := -c -MMD -MP
 MAKEFLAGS   += --no-print-directory -j4
 
 SOURCES := main \
-		   Data \
            Serializer
 
 SOURCES := $(addsuffix .cpp, $(SOURCES))
