@@ -1,11 +1,17 @@
 #include <ScalarConverter.hpp>
+#include <cmath>
 
 static void printDouble(double number) {
   std::cout << "double: " << std::fixed << std::setprecision(1)
             << static_cast<double>(number) << "\n";
 }
 
-static void printFloat(float number) {
+static void printFloat(double number) {
+  if (!std::isinf(number) && !std::isnan(number) &&
+      (number < std::numeric_limits<float>::min() ||
+       number > std::numeric_limits<float>::max())) {
+    std::cout << "float: Impossible\n";
+  }
   std::cout << "float: " << std::fixed << std::setprecision(1)
             << static_cast<float>(number) << "f" << "\n";
 }
