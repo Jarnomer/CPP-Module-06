@@ -7,7 +7,7 @@ RM          := rm -rf
 SCREENCLEAR := printf "\033c"
 
 CC          := c++
-CFLAGS      := -g -Wall -Werror -Wextra
+CFLAGS      := -Wall -Werror -Wextra
 CPPFLAGS    := -c -MMD -MP
 DEBUGFLAGS  := -fsanitize=address
 MAKEFLAGS   += --no-print-directory -j4
