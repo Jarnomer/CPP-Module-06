@@ -9,7 +9,7 @@
 #include <regex>
 #include <string>
 
-enum class Type { Invalid, Char, Int, Float, Double };
+enum class ScalarType { Invalid, Char, Int, Float, Double };
 
 class ScalarConverter {
 public:
@@ -17,5 +17,6 @@ public:
   ScalarConverter(const ScalarConverter &other) = delete;
   ScalarConverter &operator=(const ScalarConverter &other) = delete;
   ~ScalarConverter(void) = delete;
+
   static void convert(std::string input);
 };

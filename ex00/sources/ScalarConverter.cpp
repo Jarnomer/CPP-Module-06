@@ -83,21 +83,21 @@ static bool isNanfOrInff(std::string str) {
   return (str == "inff" || str == "-inff" || str == "nanf");
 }
 
-static Type getScalarType(std::string str) {
+static ScalarType getScalarType(std::string str) {
   std::regex pattern(R"(^[-+]?\d+(\.\d+)?f?$)");
   if (str.length() == 1 && !std::isdigit(str[0])) {
-    return Type::Char;
+    return ScalarType::Char;
   } else if (!isNanfOrInff(str) && !isNanOrInf(str) &&
              !std::regex_match(str, pattern)) {
-    return Type::Invalid;
+    return ScalarType::Invalid;
   } else if (isNanfOrInff(str) || isFloat(str)) {
-    return Type::Float;
+    return ScalarType::Float;
   } else if (isNanOrInf(str) || isDouble(str)) {
-    return Type::Double;
+    return ScalarType::Double;
   } else if (isInt(str)) {
-    return Type::Int;
+    return ScalarType::Int;
   } else {
-    return Type::Invalid;
+    return ScalarType::Invalid;
   }
 }
 
@@ -105,16 +105,16 @@ void ScalarConverter::convert(std::string input) {
   try {
     std::cout << "Converting: " << input << "\n";
     switch (getScalarType(input)) {
-    case Type::Char:
+    case ScalarType::Char:
       convertChar(input[0]);
       break;
-    case Type::Int:
+    case ScalarType::Int:
       convertInt(input);
       break;
-    case Type::Float:
+    case ScalarType::Float:
       convertFloat(input);
       break;
-    case Type::Double:
+    case ScalarType::Double:
       convertDouble(input);
       break;
     default:
