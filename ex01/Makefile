@@ -1,4 +1,4 @@
-NAME        := convert
+NAME        := serializer
 BUILDLOG    := build.log
 SOURCEDIR   := sources
 BUILDDIR    := build
@@ -12,7 +12,8 @@ CPPFLAGS    := -c -MMD -MP
 MAKEFLAGS   += --no-print-directory -j4
 
 SOURCES := main \
-           ScalarConverter
+		   Data \
+           Serializer
 
 SOURCES := $(addsuffix .cpp, $(SOURCES))
 OBJECTS := $(addprefix $(BUILDDIR)/, $(SOURCES:.cpp=.o))
