@@ -1,5 +1,4 @@
 #include <ScalarConverter.hpp>
-#include <cmath>
 
 static void printDouble(double number) {
   std::cout << "double: " << std::fixed << std::setprecision(1)
