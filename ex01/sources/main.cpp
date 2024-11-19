@@ -19,5 +19,6 @@ int main(void) {
   } else {
     std::cout << "Pointers don't match!\n";
   }
+
   return 0;
 }

@@ -10,6 +10,7 @@ void runInvalidTests(void) {
   }
   std::cout << "========================\n";
 }
+
 void runValidTests(void) {
   std::cout << "\n";
   std::cout << "Valid tests\n";
